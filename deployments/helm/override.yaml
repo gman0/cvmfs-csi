@@ -1,0 +1,7 @@
+extraConfigMaps:
+  cvmfs-csi-default-local:
+    default.local: |
+      {{ tpl (.Files.Get "cvmfs-csi-configs/default.conf") . | nindent 2 }}
+      CVMFS_HTTP_PROXY="squid.fnal.gov:3182;DIRECT"
+    hello: |
+      asdf
